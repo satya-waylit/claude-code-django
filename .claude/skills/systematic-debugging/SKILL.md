@@ -182,9 +182,7 @@ Before claiming fixed:
 
 - [ ] Root cause identified
 - [ ] Reproduction test passes
-- [ ] Full test suite passes (`uv run pytest`)
-- [ ] No type errors (`uv run pyright`)
-- [ ] No lint errors (`uv run ruff check .`)
+- [ ] `PostToolUse` hooks report clean on every edited file (lint, format, types, tests)
 
 ## Red Flags
 

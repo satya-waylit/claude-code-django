@@ -1,6 +1,6 @@
 ---
 name: ticket
-description: Work on a JIRA/Linear ticket end-to-end: read ticket details, explore codebase, create a branch, implement with TDD, run quality checks, update ticket status, and create a PR. Use when the user provides a ticket ID to implement. Triggers on requests like "/ticket PROJ-123", "work on this ticket", "implement PROJ-123".
+description: 'Work on a JIRA/Linear ticket end-to-end: read ticket details, explore codebase, create a branch, implement with TDD, run quality checks, update ticket status, and create a PR. Use when the user provides a ticket ID to implement. Triggers on requests like "/ticket PROJ-123", "work on this ticket", "implement PROJ-123".'
 ---
 
 # Ticket Workflow
@@ -37,14 +37,11 @@ git checkout -b {initials}/{ticket-id}-{brief-description}
 - Write tests first (TDD)
 - Make incremental commits
 
-### 5. Run Quality Checks
+### 5. Verify
 
-```bash
-uv run ruff check .
-uv run ruff format .
-uv run pyright
-uv run pytest
-```
+Lint, format, type checks, and tests run automatically via `PostToolUse` hooks on every
+file you edit. Read their feedback and fix what they report — don't re-run the checkers
+by hand.
 
 ### 6. Update the Ticket
 
